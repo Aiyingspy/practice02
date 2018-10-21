@@ -1,6 +1,7 @@
 package com.example.weatherapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -31,8 +32,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private TextView cityTv, timeTv, humidityTv, weekTv, pmDataTv,
             pmQualityTv, temperatureTv, climateTv, windTv, city_name_Tv;
     private ImageView weatherImg, pmImg;
-
+    private ImageView mCitySelect;
     private ImageView mUpdateBtn;
+
     private Handler mHandler = new Handler() {
         public void handleMessage(android.os.Message msg) {
             switch (msg.what) {
@@ -57,6 +59,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
             Log.d("myWeather", "网络挂了");
             Toast.makeText(MainActivity.this, "网络挂了！", Toast.LENGTH_LONG).show();
         }
+        mCitySelect=(ImageView)findViewById(R.id.title_city_manager);
+        mCitySelect.setOnClickListener(this);
     }
     void initView(){
         city_name_Tv = (TextView) findViewById(R.id.title_city_name);
@@ -71,16 +75,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
         climateTv = (TextView) findViewById(R.id.climate);
         windTv = (TextView) findViewById(R.id.wind);
         weatherImg = (ImageView) findViewById(R.id.weather_img);
-        city_name_Tv.setText("N/A");
-        cityTv.setText("N/A");
-        timeTv.setText("N/A");
-        humidityTv.setText("N/A");
-        pmDataTv.setText("N/A");
-        pmQualityTv.setText("N/A");
-        weekTv.setText("N/A");
-        temperatureTv.setText("N/A");
-        climateTv.setText("N/A");
-        windTv.setText("N/A");
+//        city_name_Tv.setText("N/A");
+//        cityTv.setText("N/A");
+//        timeTv.setText("N/A");
+//        humidityTv.setText("N/A");
+//        pmDataTv.setText("N/A");
+//        pmQualityTv.setText("N/A");
+//        weekTv.setText("N/A");
+//        temperatureTv.setText("N/A");
+//        climateTv.setText("N/A");
+//        windTv.setText("N/A");
     }
     private TodayWeather parseXML(String xmldata) {
 
@@ -169,6 +173,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         return todayWeather;
     }
     public void onClick(View view) {
+        if(view.getId()==R.id.title_city_manager){
+            Intent i=new Intent(this,SelectCity.class);
+            startActivityForResult(i,1);
+            //startActivity(i);
+        }
         if (view.getId() == R.id.title_update_btn) {
             Log.d("myWeather", "点击更新");
             SharedPreferences sharedPreferences = getSharedPreferences("config", MODE_PRIVATE);
@@ -184,7 +193,21 @@ public class MainActivity extends Activity implements View.OnClickListener {
             initView();
         }
     }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            String newCityCode= data.getStringExtra("cityCode");
+            Log.d("myWeather", "选择的城市代码为"+newCityCode);
+            if (NetUtil.getNetworkState(this) != NetUtil.NETWORN_NONE) {
+                Log.d("myWeather", "网络OK");
+                queryWeatherCode(newCityCode);
+            } else {
+                Log.d("myWeather", "网络挂了");
+                Toast.makeText(MainActivity.this, "网络挂了！", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
     void updateTodayWeather(TodayWeather todayWeather){
+        initView();
         city_name_Tv.setText(todayWeather.getCity()+"天气");
         cityTv.setText(todayWeather.getCity());
         timeTv.setText(todayWeather.getUpdatetime()+ "发布");
