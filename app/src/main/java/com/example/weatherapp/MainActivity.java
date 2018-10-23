@@ -8,7 +8,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,9 +35,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private TextView cityTv, timeTv, humidityTv, weekTv, pmDataTv,
             pmQualityTv, temperatureTv, climateTv, windTv, city_name_Tv;
     private ImageView weatherImg, pmImg;
+
     private ImageView mCitySelect;
     private ImageView mUpdateBtn;
-
+    private ListView mlistView;
+      // mlistView=(ListView)findViewById(R.id.list_view);
     private Handler mHandler = new Handler() {
         public void handleMessage(android.os.Message msg) {
             switch (msg.what) {
@@ -59,8 +64,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
             Log.d("myWeather", "网络挂了");
             Toast.makeText(MainActivity.this, "网络挂了！", Toast.LENGTH_LONG).show();
         }
+
         mCitySelect=(ImageView)findViewById(R.id.title_city_manager);
         mCitySelect.setOnClickListener(this);
+
     }
     void initView(){
         city_name_Tv = (TextView) findViewById(R.id.title_city_name);
@@ -86,6 +93,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //        climateTv.setText("N/A");
 //        windTv.setText("N/A");
     }
+
     private TodayWeather parseXML(String xmldata) {
 
         TodayWeather todayWeather = null;
