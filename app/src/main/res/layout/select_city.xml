@@ -8,7 +8,8 @@
         android:id="@+id/list_title"
         android:layout_width="fill_parent"
         android:layout_height="45.0dip"
-        android:background="#ffcd2626" >
+        android:background="#ffcd2626">
+
         <TextView
             android:id="@+id/title_name"
             android:layout_width="fill_parent"
@@ -24,8 +25,8 @@
             android:layout_height="45.0dip"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/base_action_bar_back_normal"
-            />
+            android:src="@drawable/base_action_bar_back_normal" />
+
         <ImageView
             android:layout_width="1.0dip"
             android:layout_height="40dip"
@@ -36,22 +37,63 @@
             android:gravity="center" />
 
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@id/list_title"
-        android:orientation="vertical" >
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/title">
-        <ListView
-            android:id="@+id/list_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        android:orientation="vertical">
 
-        </ListView>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title">
 
-    </RelativeLayout>
+            <EditText
+                android:id="@+id/search_edit"
+                android:layout_width="280dp"
+                android:layout_height="59dp"
+                android:layout_marginStart="10.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginEnd="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginBottom="10.0dip"
+                android:layout_weight="1"
+                android:background="@drawable/contact_search_box_edittext_keyword_background"
+                android:drawableLeft="@drawable/magnifying_glass"
+                android:drawablePadding="8.0dip"
+                android:hint="搜索全国城市（中⽂）"
+                android:paddingLeft="10.0dip"
+                android:paddingTop="8.0dip"
+                android:paddingRight="30.0dip"
+                android:paddingBottom="8.0dip"
+                android:singleLine="true"
+                android:textColor="#ff000000"
+                android:textColorHint="#ffcccccc"
+                android:textSize="15.0sp" />
+
+            <ListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/search_edit">
+
+            </ListView>
+
+        </RelativeLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:text="确定" />
 </RelativeLayout>
