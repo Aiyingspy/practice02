@@ -1,14 +1,5 @@
 package com.example.weatherapp.com.example.weatherapp.bean;
 
-import android.util.Log;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
-
-import java.io.IOException;
-import java.io.StringReader;
-
 public class TodayWeather {
     private String city;
     private String updatetime;
@@ -22,6 +13,150 @@ public class TodayWeather {
     private String high;
     private String low;
     private String type;
+    //未来第1天的天气
+    private String tomorrow1_date;
+    private String tomorrow1_high;
+    private String tomorrow1_low;
+    private String tomorrow1_type;
+    private String tomorrow1_fengxiang;
+    //未来第2天的天气
+     private String tomorrow2_date;
+     private String tomorrow2_high;
+     private String tomorrow2_low;
+     private String tomorrow2_type;
+     private String tomorrow2_fengxiang;
+     //未来第3天的天气
+     private String tomorrow3_date;
+     private String tomorrow3_high;
+     private String tomorrow3_low;
+     private String tomorrow3_type;
+     private String tomorrow3_fengxiang;
+     //未来第4天的天气
+     private String tomorrow4_date;
+     private String tomorrow4_high;
+     private String tomorrow4_low;
+     private String tomorrow4_type;
+     private String tomorrow4_fengxiang;
+     public void setTomorrow1_date(String tomorrow1_date) {
+         this.tomorrow1_date = tomorrow1_date;
+     }
+     public void setTomorrow1_high(String tomorrow1_high) {
+         this.tomorrow1_high = tomorrow1_high;
+     }
+     public void setTomorrow1_low(String tomorrow1_low) {
+         this.tomorrow1_low = tomorrow1_low;
+     }
+     public void setTomorrow1_type(String tomorrow1_type) {
+         this.tomorrow1_type = tomorrow1_type;
+     }
+     public void setTomorrow1_fengxiang(String tomorrow1_fengxiang) {
+         this.tomorrow1_fengxiang = tomorrow1_fengxiang;
+     }
+     public void setTomorrow2_date(String tomorrow2_date) {
+         this.tomorrow2_date = tomorrow2_date;
+     }
+     public void setTomorrow2_high(String tomorrow2_high) {
+         this.tomorrow2_high = tomorrow2_high;
+     }
+     public void setTomorrow2_low(String tomorrow2_low) {
+         this.tomorrow2_low = tomorrow2_low;
+     }
+     public void setTomorrow2_type(String tomorrow2_type) {
+         this.tomorrow2_type = tomorrow2_type;
+     }
+     public void setTomorrow2_fengxiang(String tomorrow2_fengxiang) {
+         this.tomorrow2_fengxiang = tomorrow2_fengxiang;
+     }
+     public void setTomorrow3_date(String tomorrow3_date) {
+         this.tomorrow3_date = tomorrow3_date;
+     }
+     public void setTomorrow3_high(String tomorrow3_high) {
+         this.tomorrow3_high = tomorrow3_high;
+     }
+     public void setTomorrow3_low(String tomorrow3_low) {
+         this.tomorrow3_low = tomorrow3_low;
+     }
+     public void setTomorrow3_type(String tomorrow3_type) {
+         this.tomorrow3_type = tomorrow3_type;
+     }
+     public void setTomorrow3_fengxiang(String tomorrow3_fengxiang) {
+         this.tomorrow3_fengxiang = tomorrow3_fengxiang;
+     }
+     public void setTomorrow4_date(String tomorrow4_date) {
+         this.tomorrow4_date = tomorrow4_date;
+     }
+     public void setTomorrow4_high(String tomorrow4_high) {
+         this.tomorrow4_high = tomorrow4_high;
+     }
+     public void setTomorrow4_low(String tomorrow4_low) {
+         this.tomorrow4_low = tomorrow4_low;
+     }
+     public void setTomorrow4_type(String tomorrow4_type) {
+         this.tomorrow4_type = tomorrow4_type;
+     }
+     public void setTomorrow4_fengxiang(String tomorrow4_fengxiang) {
+         this.tomorrow4_fengxiang = tomorrow4_fengxiang;
+     }
+     public String getTomorrow1_date() {
+         return tomorrow1_date;
+     }
+     public String getTomorrow1_high() {
+         return tomorrow1_high;
+     }
+     public String getTomorrow1_low() {
+         return tomorrow1_low;
+     }
+     public String getTomorrow1_type() {
+         return tomorrow1_type;
+     }
+     public String getTomorrow1_fengxiang() {
+         return tomorrow1_fengxiang;
+     }
+     public String getTomorrow2_date() {
+         return tomorrow2_date;
+     }
+     public String getTomorrow2_high() {
+         return tomorrow2_high;
+     }
+     public String getTomorrow2_low() {
+         return tomorrow2_low;
+     }
+     public String getTomorrow2_type() {
+         return tomorrow2_type;
+     }
+     public String getTomorrow2_fengxiang() {
+         return tomorrow2_fengxiang;
+     }
+     public String getTomorrow3_date() {
+         return tomorrow3_date;
+     }
+     public String getTomorrow3_high() {
+         return tomorrow3_high;
+     }
+     public String getTomorrow3_low() {
+         return tomorrow3_low;
+     }
+     public String getTomorrow3_type() {
+         return tomorrow3_type;
+     }
+     public String getTomorrow3_fengxiang() {
+         return tomorrow3_fengxiang;
+     }
+     public String getTomorrow4_date() {
+         return tomorrow4_date;
+     }
+     public String getTomorrow4_high() {
+         return tomorrow4_high;
+     }
+     public String getTomorrow4_low() {
+         return tomorrow4_low;
+     }
+        public String getTomorrow4_type() {
+         return tomorrow4_type;
+     }
+        public String getTomorrow4_fengxiang() {
+         return tomorrow4_fengxiang;
+     }
 
     public String getCity() {
         return city;
@@ -134,6 +269,27 @@ public class TodayWeather {
                 ", high='" + high + '\'' +
                 ", low='" + low + '\'' +
                 ", type='" + type + '\'' +
+                ", tomorrow1_date='" + tomorrow1_date + '\'' +
+                ", tomorrow1_high='" + tomorrow1_high + '\'' +
+                 ", tomorrow1_low='" + tomorrow1_low + '\'' +
+                 ", tomorrow1_type='" + tomorrow1_type + '\'' +
+                 ", tomorrow1_fengxiang='" + tomorrow1_fengxiang + '\'' +
+                 ", tomorrow2_date='" + tomorrow2_date + '\'' +
+                 ", tomorrow2_high='" + tomorrow2_high + '\'' +
+                 ", tomorrow2_low='" + tomorrow2_low + '\'' +
+                 ", tomorrow2_type='" + tomorrow2_type + '\'' +
+                 ", tomorrow2_fengxiang='" + tomorrow2_fengxiang + '\'' +
+                 ", tomorrow3_date='" + tomorrow3_date + '\'' +
+                 ", tomorrow3_high='" + tomorrow3_high + '\'' +
+                 ", tomorrow3_low='" + tomorrow3_low + '\'' +
+                 ", tomorrow3_type='" + tomorrow3_type + '\'' +
+                 ", tomorrow3_fengxiang='" + tomorrow3_fengxiang + '\'' +
+                 ", tomorrow4_date='" + tomorrow4_date + '\'' +
+                 ", tomorrow4_high='" + tomorrow4_high + '\'' +
+                 ", tomorrow4_low='" + tomorrow4_low + '\'' +
+                 ", tomorrow4_type='" + tomorrow4_type + '\'' +
+                 ", tomorrow4_fengxiang='" + tomorrow4_fengxiang + '\'' +
+
                 '}';
     }
 }

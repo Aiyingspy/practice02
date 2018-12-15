@@ -240,8 +240,6 @@
                         android:textColor="@android:color/white"
                         android:textSize="20.0sp" />
                     <!-- 风力信息 -->
-
-
                     <TextView
                         android:id="@+id/wind"
                         android:layout_width="wrap_content"
@@ -256,12 +254,40 @@
                 </RelativeLayout>
             </RelativeLayout>
             <!-- 六日天气信息 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/pages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="40dip"
+                    android:layout_alignParentLeft="true" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+                    <ImageView
+                        android:layout_width="10dip"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/page1Img"
+                        android:src="@drawable/point_enable"/>
+                <ImageView
+                    android:layout_width="10dip"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/page1Img"
+                    android:layout_marginLeft="5dip"
+                    android:id="@+id/page2Img"
+                    android:src="@drawable/point_enable"/>
+
+            </RelativeLayout>
+            </RelativeLayout>
+
+
             <!-- 广告等信息 -->
         </LinearLayout>
-
-
-
-
-
-
 </RelativeLayout>

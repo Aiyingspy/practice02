@@ -33,12 +33,11 @@ public class SelectCity extends Activity implements View.OnClickListener {
 
 
 
-    private List<City> mCityList_on;
-    // private Myadapter myadapter;
+
     private int xiabiao;
     List<String> listOfStringName = new ArrayList<String>();
     List<String> listOfStringCode = new ArrayList<String>();
-    List<String> listOfStringRefrsh = new ArrayList<String>();
+
 
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
